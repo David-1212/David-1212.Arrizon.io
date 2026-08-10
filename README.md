@@ -104,8 +104,10 @@ Cada tarjeta (`article.hcard`) muestra una foto, el año y un texto:
 
 Coloca la foto en `images/` y cambia `src`, `alt` y `hcard__year`. No importa
 cuántas tarjetas haya: el bucle infinito funciona con cualquiera. Las fotos de
-ejemplo usan imágenes ya existentes: `botella_cristalino.jpg`, `agave1.jpg`,
-`fondo.jpeg`, `maestros.jpg`, `botella 2.jpg`, `logo.png` y `agave 4.jpg`.
+ejemplo usan imágenes reales de la marca extraídas de su sitio oficial
+(`raicillahnosarrizon.wordpress.com`): `historia_agave.jpg`, `agave1.jpg`,
+`historia_taberna.jpg`, `maestros.jpg`, `botella 2.jpg`, `logo.png` y
+`botella_cristalino.jpg`.
 
 Para cambiar la velocidad del autoplay, busca `AUTOPLAY_MS` (milisegundos) en el
 bloque "CARRUSEL HISTORIA" de `js/main.js`. Pon `0` para desactivarlo.
@@ -126,6 +128,29 @@ Cada tarjeta es clicable: la foto o "Detalles" abre un modal con foto y ficha co
 (notas, chips y botón de WhatsApp). Para cambiar datos de un producto, edita la entrada
 correspondiente en `PRODUCTOS` dentro de `js/main.js` (las tarjetas `.shopcard` y sus
 fotos viven en `productos.html`).
+
+## Proceso con fotos y videos reales
+
+Los 8 pasos de `proceso.html` muestran la foto real de cada etapa y un slot de video.
+Cada paso declara `data-video="images/proceso/<paso>.mp4"` en el `<article class="step">`;
+`js/main.js` crea el `<video>` bajo demanda (muted, `preload="metadata"`, sin descarga
+hasta que se pulsa). El slot muestra un **frame de preview**: al cargar los metadatos se
+extrae un fotograma real del propio video (canvas → `poster` en data-URL) y, si falla,
+se usa la foto del paso como póster. El frame de preview se muestra con un suave
+desenfoque y oscurecido (`filter: blur(6px) brightness(.82)`) para que resalte el
+símbolo de reproducir; al pulsar ▶ el video se ve nítido. Clic en el slot ▶ reproduce
+y oculta el icono;
+otro clic sobre el video lo pausa y regresa al frame. Para cambiar una foto o video
+basta editar `src`/`data-video` del paso. Las fotos están en `images/proceso/*.jpg` y
+los videos en `images/proceso/*.mp4` (semilla, vivero, transplante, jima, cocción,
+molienda, fermentación y destilación).
+
+> El frame se extrae del video solo en el mismo origen (HTTP/HTTPS); al abrir la página
+> directo como archivo (`file://`) el canvas queda "tainted" y se usa la foto como póster.
+
+> Peso: los 8 videos suman ~146 MB (`jima.mp4` pesa 71 MB). No afectan el rendimiento
+> de carga porque se sirven con `preload="metadata"`, pero considera comprimirlos o
+> subirlos por separado a YouTube/Vimeo si el hosting te limita el tamaño.
 
 ## Estructura
 
@@ -148,7 +173,8 @@ sitemap.xml      → mapa del sitio para Google (con imágenes)
 
 ## Extras ya incluidos
 
-- Aviso de mayoría de edad (18+) en `index.html`, con recordatorio por `localStorage`.
+- Aviso de mayoría de edad (18+) en `index.html`, que aparece en cada visita nueva
+  al sitio (se recuerda por `sessionStorage` solo durante esa sesión de navegación).
 - Botones de pedido por WhatsApp con mensaje prellenado (producto + visita) en todas
   las páginas.
 - Formulario de contacto que envía el mensaje directo a WhatsApp (sin servidor).
@@ -174,8 +200,14 @@ Antes de subirlo a producción:
    se re-comprimieron, y los cutouts de productos se sirven en **WebP** con fallback
    PNG (`<picture>`). La carpeta pasó de 68.9 MB a 12.2 MB. Si cambias fotos,
    procura mantener ese peso (Squoosh/TinyPNG).
-3. **Agrega la foto de Sandra** como `images/sandra.jpg` (la referencia ya existe
-   en la sección "Maestros" de `historia.html` y hoy queda rota).
+3. **(hecho)** Cronología de `historia.html` con fotos oficiales de la marca
+   (`historia_agave.jpg`, `historia_taberna.jpg`, `maestros.jpg` y
+   `botella_cristalino.jpg`). La tarjeta "Navidad" (Sandra como Embajadora) se
+   sustituyó por la noticia real **IX Expo Tequila Tlaquepaque 2019** (primera
+   exposición de la marca). Pendiente: foto real de **las esposas de los
+   maestros** en la sección "Maestros" (hoy usa `historia_taberna.jpg` como
+   placeholder); al tenerla, colócala en `images/` y cambia el `src` de la
+   segunda tarjeta.
 4. Registra el sitio en **Google Search Console** y **Bing Webmaster Tools**,
    y envía `sitemap.xml`.
 5. Conecta **Google Analytics 4** (o Plausible/GA4 alternativo) antes del lanzamiento.

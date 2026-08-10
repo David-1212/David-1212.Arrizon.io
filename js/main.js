@@ -46,7 +46,7 @@ const AGE_KEY = "arrizon_age_verified";
 
 function initAgeGate() {
   if (!ageGate) return;
-  const already = localStorage.getItem(AGE_KEY) === "yes";
+  const already = sessionStorage.getItem(AGE_KEY) === "yes";
   if (already) {
     ageGate.classList.add("is-hidden");
   } else {
@@ -55,7 +55,7 @@ function initAgeGate() {
   const yes = $("#ageYes");
   const no = $("#ageNo");
   if (yes) yes.addEventListener("click", () => {
-    localStorage.setItem(AGE_KEY, "yes");
+    sessionStorage.setItem(AGE_KEY, "yes");
     ageGate.classList.add("is-hidden");
     lockScroll(false);
   });
@@ -288,7 +288,7 @@ const PRODUCTOS = {
     chips: ["45% Alc. Vol.", "Mascota, Jalisco", "Doble destilación"],
   },
   "madurada": {
-    nombre: "Madurada en Vidrio", formato: "750 ml · 45% Alc. Vol.", tag: "Edición especial", precio: 550,
+    nombre: "Madurada en Vidrio", formato: "750 ml · 45% Alc. Vol.", tag: "Edición especial", precio: 500,
     img: "images/productos/madurado-cutout.webp",
     desc: "Reposa en vidrio durante al menos 6 meses, un sello de nuestra casa: la maduración sin roble suaviza y redondea el destilado.",
     notas: [
@@ -488,36 +488,75 @@ if (stepNav && stepsFlow) {
   }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
   steps.forEach((s) => spy.observe(s));
 
-  /* Video por paso: el slot ▶ se activa solo si el paso define data-video */
+  /* Video por paso: el slot ▶ se activa solo si el paso define data-video.
+     Lazy-load: el <video> se crea recién cuando el paso se acerca al viewport
+     (IntersectionObserver), así la carga inicial no transfiere bytes de video. */
   steps.forEach((step) => {
     const media = $(".step__media", step);
     const slot = $(".step__video-slot", media);
     const src = step.dataset.video;
     if (!slot || !src) return;
 
-    const video = document.createElement("video");
-    video.src = src;
-    video.muted = true;
-    video.playsInline = true;
-    video.preload = "metadata";
-    video.hidden = true;
-    slot.append(video);
-    slot.classList.add("is-ready");
+    let video = null;
 
-    const play = () => {
-      video.hidden = false;
-      video.play();
-      slot.classList.add("is-playing");
-    };
-    const close = () => {
-      video.pause();
-      video.hidden = true;
-      slot.classList.remove("is-playing");
+    const build = () => {
+      if (video) return;
+      const posterImg = $(".step__media-img img", media);
+      video = document.createElement("video");
+      video.src = src;
+      video.muted = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+      video.poster = posterImg ? posterImg.currentSrc || posterImg.src : "";
+      slot.append(video);
+      slot.classList.add("is-ready");
+
+      /* Preview real: extrae un frame del video como poster */
+      const grabFrame = () => {
+        if (!video.videoWidth) return;
+        try {
+          const grab = () => {
+            try {
+              const c = document.createElement("canvas");
+              c.width = video.videoWidth;
+              c.height = video.videoHeight;
+              c.getContext("2d").drawImage(video, 0, 0, c.width, c.height);
+              video.poster = c.toDataURL("image/jpeg", 0.72);
+            } catch (e) { /* conserva la foto del paso */ }
+            video.removeEventListener("seeked", grab);
+          };
+          video.addEventListener("seeked", grab);
+          video.currentTime = 0.1;
+        } catch (e) { /* conserva la foto del paso */ }
+      };
+      video.addEventListener("loadedmetadata", grabFrame);
+
+      const play = () => {
+        video.play().catch(() => {});
+        slot.classList.add("is-playing");
+      };
+      const close = () => {
+        video.pause();
+        video.currentTime = 0;
+        slot.classList.remove("is-playing");
+      };
+      video.addEventListener("click", () => { video.paused ? play() : close(); });
+      video.addEventListener("ended", close);
     };
 
-    slot.addEventListener("click", play);
-    video.addEventListener("click", (e) => { e.stopPropagation(); close(); });
-    video.addEventListener("ended", close);
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            build();
+            io.disconnect();
+          }
+        });
+      }, { rootMargin: "300px 0px" });
+      io.observe(media);
+    } else {
+      build();
+    }
   });
 }
 

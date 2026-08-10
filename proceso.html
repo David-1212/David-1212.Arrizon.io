@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" class="no-js">
 <head>
   <script>document.documentElement.classList.replace('no-js','js');</script>
@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ============ SEO ============ -->
-  <title>Nuestro Proceso | Raicilla Hnos. Arrizón</title>
+  <title>Proceso Artesanal de la Raicilla | Hnos. Arrizón, Mascota</title>
   <meta name="description" content="De la semilla a la botella: vivero, jima, cocción en horno de piedra, molienda, fermentación y destilación artesanal de agave maximiliana.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#fbf9f3">
@@ -16,13 +16,13 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
   <meta property="og:site_name" content="Raicilla Hnos. Arrizón">
-  <meta property="og:title" content="Nuestro Proceso | Raicilla Hnos. Arrizón">
+  <meta property="og:title" content="Proceso Artesanal de la Raicilla | Hnos. Arrizón, Mascota">
   <meta property="og:description" content="Ocho pasos artesanales del agave maximiliana hasta tu copa.">
   <meta property="og:image" content="https://arrizon.mx/images/proceso/horno.jpeg">
   <meta property="og:url" content="https://arrizon.mx/proceso.html">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nuestro Proceso | Raicilla Hnos. Arrizón">
+  <meta name="twitter:title" content="Proceso Artesanal de la Raicilla | Hnos. Arrizón, Mascota">
   <meta name="twitter:description" content="Ocho pasos artesanales del agave maximiliana hasta tu copa.">
   <meta name="twitter:image" content="https://arrizon.mx/images/proceso/horno.jpeg">
 
@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=68">
+  <link rel="stylesheet" href="css/styles.css?v=76">
 
   <!-- ============ DATOS ESTRUCTURADOS: PROCESO ============ -->
   <script type="application/ld+json">
@@ -48,6 +48,18 @@
       { "@type": "HowToStep", "position": 6, "name": "Molienda", "text": "Se extrae el jugo moliendo la piña cocida." },
       { "@type": "HowToStep", "position": 7, "name": "Fermentación", "text": "Se fermenta en tinas para desarrollar los aromas." },
       { "@type": "HowToStep", "position": 8, "name": "Destilación", "text": "Doble destilación artesanal en alambique de cobre." }
+    ]
+  }
+  </script>
+
+  <!-- ============ DATOS ESTRUCTURADOS: MIGAS ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://arrizon.mx/" },
+      { "@type": "ListItem", "position": 2, "name": "Proceso", "item": "https://arrizon.mx/proceso.html" }
     ]
   }
   </script>
@@ -89,7 +101,7 @@
     <section class="page-hero">
       <div class="container">
         <span class="page-hero__kicker reveal">Del monte a la botella</span>
-        <h1 class="reveal">Nuestro proceso</h1>
+        <h1 class="reveal">El proceso artesanal de la raicilla</h1>
         <p class="reveal">Todo empieza con la semilla del agave maximiliana y termina con una copa de raicilla. Ocho pasos, cero atajos.</p>
       </div>
     </section>
@@ -110,10 +122,10 @@
       </div>
 
       <div class="container steps-flow" id="stepsFlow">
-        <article class="step reveal" id="step-1" data-index="01">
+        <article class="step reveal" id="step-1" data-index="01" data-video="images/proceso/semilla.mp4">
             <div class="step__media">
             <div class="step__media-img">
-              <img src="images/proceso/semillas.jpeg" alt="Semillas de agave maximiliana" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <img src="images/proceso/semilla.jpg" alt="Semillas de agave maximiliana" loading="lazy" decoding="async" onerror="this.style.display='none'">
             </div>
             <div class="step__video-slot" aria-label="Espacio para video">
               <span class="step__video-slot-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
@@ -126,10 +138,10 @@
             <p>Trabajamos con agave maximiliana, la especie silvestre de la sierra. Colectamos las semillas de plantas sanas para garantizar la siguiente generación.</p>
           </div>
         </article>
-        <article class="step reveal" id="step-2" data-index="02">
+        <article class="step reveal" id="step-2" data-index="02" data-video="images/proceso/vivero.mp4">
             <div class="step__media">
             <div class="step__media-img">
-              <img src="images/proceso/plantitas_nacimiento.jpeg" alt="Plántulas de agave en el vivero" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <img src="images/proceso/vivero.jpg" alt="Plántulas de agave creciendo en el vivero" loading="lazy" decoding="async" onerror="this.style.display='none'">
             </div>
             <div class="step__video-slot" aria-label="Espacio para video">
               <span class="step__video-slot-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
@@ -142,10 +154,10 @@
             <p>Cada semilla germina y crece protegida en nuestro vivero hasta convertirse en una plántula lista para el campo.</p>
           </div>
         </article>
-        <article class="step reveal" id="step-3" data-index="03">
+        <article class="step reveal" id="step-3" data-index="03" data-video="images/proceso/transplante.mp4">
           <div class="step__media">
             <div class="step__media-img">
-              <img src="images/proceso/plantitas_nacimiento.jpeg" alt="Plántulas de agave listas para el transplante" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <img src="images/proceso/transplante.jpg" alt="Plántula de agave lista para el transplante al monte" loading="lazy" decoding="async" onerror="this.style.display='none'">
             </div>
             <div class="step__video-slot" aria-label="Espacio para video">
               <span class="step__video-slot-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
@@ -158,10 +170,10 @@
             <p>Las plántulas van al monte, donde maduran de 8 a 15 años antes de ser cosechadas. La paciencia es parte de la receta.</p>
           </div>
         </article>
-        <article class="step reveal" id="step-4" data-index="04">
+        <article class="step reveal" id="step-4" data-index="04" data-video="images/proceso/jima.mp4">
           <div class="step__media">
             <div class="step__media-img">
-              <img src="images/proceso/agave_horno.jpeg" alt="Agave maduro listo para la elaboración" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <img src="images/proceso/jima.jpg" alt="Jima del agave: la piña se corta a mano" loading="lazy" decoding="async" onerror="this.style.display='none'">
             </div>
             <div class="step__video-slot" aria-label="Espacio para video">
               <span class="step__video-slot-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
@@ -174,10 +186,10 @@
             <p>En su punto de madurez, la piña se corta a mano y se transporta hasta la taberna para iniciar la elaboración.</p>
           </div>
         </article>
-        <article class="step reveal" id="step-5" data-index="05">
+        <article class="step reveal" id="step-5" data-index="05" data-video="images/proceso/coccion.mp4">
             <div class="step__media">
             <div class="step__media-img">
-              <img src="images/proceso/horno.jpeg" alt="Horno de piedra para la cocción" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <img src="images/proceso/coccion.jpg" alt="Piñas de agave cociéndose en el horno de piedra" loading="lazy" decoding="async" onerror="this.style.display='none'">
             </div>
             <div class="step__video-slot" aria-label="Espacio para video">
               <span class="step__video-slot-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
@@ -190,10 +202,10 @@
             <p>Las piñas se cuecen en un horno de piedra alimentado con leña, a baja temperatura y por horas, para concentrar los azúcares y aromas.</p>
           </div>
         </article>
-        <article class="step reveal" id="step-6" data-index="06">
+        <article class="step reveal" id="step-6" data-index="06" data-video="images/proceso/molienda.mp4">
           <div class="step__media">
             <div class="step__media-img">
-              <img src="images/proceso/agave_cocido.jpeg" alt="Agave cocido listo para la molienda" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <img src="images/proceso/molienda.jpg" alt="Agave cocido listo para la molienda" loading="lazy" decoding="async" onerror="this.style.display='none'">
             </div>
             <div class="step__video-slot" aria-label="Espacio para video">
               <span class="step__video-slot-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
@@ -206,10 +218,10 @@
             <p>El agave cocido se muele para extraer el jugo que fermentará. Del bagazo no se desperdicia nada: vuelve al campo.</p>
           </div>
         </article>
-        <article class="step reveal" id="step-7" data-index="07">
+        <article class="step reveal" id="step-7" data-index="07" data-video="images/proceso/fermentacion.mp4">
           <div class="step__media">
             <div class="step__media-img">
-              <img src="images/proceso/horno 1.jpeg" alt="Carga del horno de piedra" loading="lazy" decoding="async" onerror="this.style.display='none'">
+              <img src="images/proceso/fermentacion.jpg" alt="Jugo de agave fermentando en tinas" loading="lazy" decoding="async" onerror="this.style.display='none'">
             </div>
             <div class="step__video-slot" aria-label="Espacio para video">
               <span class="step__video-slot-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
@@ -222,7 +234,7 @@
             <p>El jugo fermenta en tinas abiertas, con levaduras silvestres del aire de la sierra, desarrollando carácter y aroma.</p>
           </div>
         </article>
-        <article class="step reveal" id="step-8" data-index="08">
+        <article class="step reveal" id="step-8" data-index="08" data-video="images/proceso/destilacion.mp4">
           <div class="step__media">
             <div class="step__media-img">
               <img src="images/proceso/agave_horno.jpeg" alt="Agave de la sierra" loading="lazy" decoding="async" onerror="this.style.display='none'">
@@ -329,7 +341,7 @@
     <span>Pedir por WhatsApp</span>
   </a>
 
-  <script src="js/main.js?v=68"></script>
+  <script src="js/main.js?v=76"></script>
 </body>
 </html>
 
