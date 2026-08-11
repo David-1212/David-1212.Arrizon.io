@@ -200,14 +200,16 @@ Antes de subirlo a producción:
    se re-comprimieron, y los cutouts de productos se sirven en **WebP** con fallback
    PNG (`<picture>`). La carpeta pasó de 68.9 MB a 12.2 MB. Si cambias fotos,
    procura mantener ese peso (Squoosh/TinyPNG).
-3. **(hecho)** Cronología de `historia.html` con fotos oficiales de la marca
-   (`historia_agave.jpg`, `historia_taberna.jpg`, `maestros.jpg` y
-   `botella_cristalino.jpg`). La tarjeta "Navidad" (Sandra como Embajadora) se
-   sustituyó por la noticia real **IX Expo Tequila Tlaquepaque 2019** (primera
-   exposición de la marca). Pendiente: foto real de **las esposas de los
-   maestros** en la sección "Maestros" (hoy usa `historia_taberna.jpg` como
-   placeholder); al tenerla, colócala en `images/` y cambia el `src` de la
-   segunda tarjeta.
+ 3. **(hecho)** Cronología de `historia.html` con fotos oficiales de la marca
+    (`images/historia/1.blas arrizon.jpg`, `2. generacion a generacion.jpg`,
+    `taberna.jpeg`, `DENOMICACION DE ORIGEN.jpg`, `maestras raicilleras.jpg` y
+    `productos/jamaica-cutout.png`). La tarjeta "Navidad" (Sandra como Embajadora)
+    pasó a contar la introducción de los **ponches** (impulsada por la
+    participación de las mujeres en la marca, para paladares que prefieren
+    sabores más suaves). `maestras raicilleras.jpg` es la foto real de **Luisa
+    Fregoso y Carolina Quintero** (producción de los ponches) en la sección
+    "Maestros". La imagen `WhatsApp Image 2026-08-01 at 6.49.48 PM.jpeg` quedó
+    sin usar (descartada por el cliente).
 4. Registra el sitio en **Google Search Console** y **Bing Webmaster Tools**,
    y envía `sitemap.xml`.
 5. Conecta **Google Analytics 4** (o Plausible/GA4 alternativo) antes del lanzamiento.

@@ -6,8 +6,7 @@
 const CONTACT = {
   whatsappNumber: "523881058508",        // +52 388 105 8508
   whatsappDisplay: "+52 388 105 8508",
-  phoneDisplay: "+52 388 105 5998",
-  phoneTel: "+523881055998",
+  whatsappNumberTour: "523881055998",    // +52 388 105 5998 (visitas y tours)
   email: "hnos.arrizon.raicilla@gmail.com",
   facebook: "https://www.facebook.com/Hnos.Arrizon",
   instagram: "https://www.instagram.com/hnos_arrizon/",
@@ -16,6 +15,7 @@ const CONTACT = {
 };
 
 const wa = (msg) => `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(msg)}`;
+const waTour = (msg) => `https://wa.me/${CONTACT.whatsappNumberTour}?text=${encodeURIComponent(msg)}`;
 const waShare = (msg) => `https://wa.me/?text=${encodeURIComponent(msg)}`;
 
 /* ============ Utilidades ============ */
@@ -223,7 +223,7 @@ function wireLinks() {
   set("waLink", wa("Hola, quiero pedir Raicilla Hnos. Arrizón."));
   set("faqWa", wa("Hola, quiero pedir Raicilla Hnos. Arrizón. ¿Cómo puedo comprar?"));
   set("mapLink", CONTACT.mapLink);
-  set("telLink", `tel:${CONTACT.phoneTel}`);
+  set("waLinkTour", waTour("Hola, me gustaría reservar una visita y tour en la Taberna La Vieja."));
   set("mailLink", `mailto:${CONTACT.email}?subject=${encodeURIComponent("Información sobre Raicilla Hnos. Arrizón")}`);
   set("reservarMail", `mailto:${CONTACT.email}?subject=${encodeURIComponent("Reserva de visita · Taberna La Vieja")}`);
   set("fbLink", CONTACT.facebook);
@@ -234,7 +234,7 @@ function wireLinks() {
   set("ttLink2", CONTACT.tiktok);
   set("footerWa", wa("Hola, quiero pedir Raicilla Hnos. Arrizón."));
   set("footerWa2", wa("Hola, quiero pedir Raicilla Hnos. Arrizón."));
-  set("footerTel", `tel:${CONTACT.phoneTel}`);
+  set("footerTel", waTour("Hola, me gustaría reservar una visita y tour en la Taberna La Vieja."));
   set("footerMail", `mailto:${CONTACT.email}?subject=${encodeURIComponent("Información sobre Raicilla Hnos. Arrizón")}`);
   set("footerMap", CONTACT.mapLink);
 }
