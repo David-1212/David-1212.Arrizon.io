@@ -48,8 +48,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "additionalType": "https://schema.org/Distillery",
+    "@type": ["LiquorStore", "LocalBusiness"],
     "@id": "https://arrizon.mx/#destileria",
     "name": "Raicilla Hnos. Arrizón",
     "description": "Destilería artesanal de raicilla 100% agave maximiliana, con tradición familiar desde 1932 en la Taberna La Vieja, Mascota, Jalisco.",
@@ -71,8 +70,10 @@
     "geo": { "@type": "GeoCoordinates", "latitude": 20.5256, "longitude": -104.785 },
     "sameAs": [
       "https://www.facebook.com/Hnos.Arrizon",
-      "https://www.instagram.com/hnos_arrizon/"
+      "https://www.instagram.com/hnos_arrizon/",
+      "https://www.tiktok.com/@hnos_arrizon"
     ],
+    "hasMap": "https://www.google.com/maps?q=Rancho+La+Vieja,+Mascota,+Jalisco,+Mexico",
     "areaServed": "MX",
     "brand": {
       "@type": "Brand",
@@ -112,6 +113,21 @@
         "@type": "Question",
         "name": "¿Se puede visitar la Taberna La Vieja?",
         "acceptedAnswer": { "@type": "Answer", "text": "Sí. Ofrecemos <a href=\"https://arrizon.mx/tour.html\">visitas guiadas y tours</a> por el rancho de La Vieja en Mascota, Jalisco, con recorrido por el campo de agave y cata de nuestros destilados." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué diferencia hay entre la raicilla y el tequila?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La raicilla es una bebida alcohólica destilada de agave con Denominación de Origen de Jalisco, elaborada históricamente en la sierra con agave maximiliana y otras especies silvestres. A diferencia del tequila (solo agave azul), la raicilla se distingue por su carácter silvestre y su proceso totalmente artesanal." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué se llama La Vieja?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La Vieja es el nombre del rancho familiar en la sierra de Mascota, Jalisco, donde la familia Arrizón elabora raicilla artesanal desde hace más de 90 años. Es el corazón de la Taberna La Vieja." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué son los ponches de raicilla?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Los ponches de Raicilla Hnos. Arrizón son licores artesanales elaborados con raicilla y frutas de la región: jamaica, mango, tamarindo, maracuyá, café, arrayán, guayaba agria, limón y membrillo. Se venden en botellas de 750 ml." }
       }
     ]
   }
