@@ -121,7 +121,7 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  { threshold: 0, rootMargin: "0px 0px -40px 0px" }
 );
 $$(".reveal").forEach((el) => revealObserver.observe(el));
 
@@ -134,8 +134,9 @@ const counterObserver = new IntersectionObserver(
       const el = entry.target;
       const target = +el.dataset.target;
       const suffix = el.dataset.suffix || "";
+      const prefix = el.dataset.prefix || "";
       if (prefersReducedMotion) {
-        el.textContent = target + suffix;
+        el.textContent = prefix + target + suffix;
         counterObserver.unobserve(el);
         return;
       }
@@ -144,7 +145,7 @@ const counterObserver = new IntersectionObserver(
       const tick = (now) => {
         const t = Math.min((now - start) / dur, 1);
         const eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = Math.round(target * eased) + suffix;
+        el.textContent = prefix + Math.round(target * eased) + suffix;
         if (t < 1) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
@@ -281,123 +282,131 @@ const PRODUCTOS = {
     img: "images/productos/raicilla_normal-cutout.webp",
     desc: "Nuestra raicilla insignia. 100% agave maximiliana de la sierra, destilada a mano en la Taberna La Vieja.",
     notas: [
-      ["Vista", "Transparente, brillante"],
-      ["Nariz", "Agave cocido, cítricos y hierbas de la sierra"],
-      ["Boca", "Herbal, ahumado sutil, mineral; final largo y cálido"],
+      ["Vista", "Cristalino, brillante"],
+      ["Nariz", "Agave cocido, cítricos, amaderado y hierbas de la sierra"],
+      ["Boca", "Frutal, ahumado sutil, minerall, untuoso; retrogusto largo y agradable"],
     ],
-    chips: ["45% Alc. Vol.", "Mascota, Jalisco", "Doble destilación"],
+    chips: ["40% Alc. Vol.", "Mascota, Jalisco", "Doble destilación"],
   },
+
+
+
   "madurada": {
-    nombre: "Madurada en Vidrio", formato: "750 ml · 45% Alc. Vol.", tag: "Edición especial", precio: 500,
+    nombre: "Madurada en Vidrio", formato: "750 ml · 40% Alc. Vol.", tag: "Edición especial", precio: 500,
     img: "images/productos/madurado-cutout.webp",
-    desc: "Reposa en vidrio durante al menos 6 meses, un sello de nuestra casa: la maduración sin roble suaviza y redondea el destilado.",
+    desc: "Reposa en vidrio durante más de 1 año: la maduración suaviza y redondea el destilado. ",
     notas: [
-      ["Vista", "Limpiada, lágrima fina"],
-      ["Nariz", "Fruta madura, miel y flores"],
+      ["Vista", "Cristalino, brillante"],
+      ["Nariz", "Agave cocido, cítricos, amaderado y frutal"],
       ["Boca", "Redonda, suave, con un toque dulce y elegante final"],
     ],
-    chips: ["45% Alc. Vol.", "6+ meses en vidrio", "Sin roble"],
+    chips: ["40% Alc. Vol.", "+1 año en vidrio"],
   },
+
+
+
+
+
   "blanco-250": {
     nombre: "Raicilla Blanco", formato: "250 ml · 45% Alc. Vol.", tag: "Degustación", precio: 150,
     img: "images/productos/pachita-cutout.webp",
     desc: "El mismo carácter de la sierra en formato viaje y degustación. Ideal para regalar, probar o llevar contigo.",
     notas: [
-      ["Vista", "Transparente"],
-      ["Nariz", "Agave, cítrico y un toque de bosque"],
-      ["Boca", "Fresca, especiada, de trago largo"],
+      ["Vista", "Cristalino, brillante"],
+      ["Nariz", "Agave cocido, cítricos, amaderado y hierbas de la sierra"],
+      ["Frutal,  ahumado sutil, mineral, untuoso; retrogusto largo y agradable"],
     ],
     chips: ["45% Alc. Vol.", "Formato 250 ml"],
   },
   "ponche-jamaica": {
-    nombre: "Ponche de Jamaica", formato: "Macerado artesanal", tag: "Frutal", precio: 250,
+    nombre: "Ponche de Jamaica", formato: "Artesanal", tag: "Frutal", precio: 250,
     img: "images/productos/jamaica-cutout.webp",
-    desc: "Flor de jamaica macerada con raicilla; ácida, refrescante y profunda.",
+    desc: "Flor de jamaica con raicilla; ácida, refrescante y profunda.",
     notas: [
       ["Sabor", "Floral, ácida y refrescante"],
       ["Maridaje", "Cítricos y postres ligeros"],
     ],
-    chips: ["Raicilla + jamaica", "Macerado artesanal"],
+    chips: ["Raicilla + jamaica", "Artesanal"],
   },
   "ponche-mango": {
-    nombre: "Ponche de Mango", formato: "Macerado artesanal", tag: "Frutal", precio: 250,
+    nombre: "Ponche de Mango", formato: "Artesanal", tag: "Frutal", precio: 250,
     img: "images/productos/mango-cutout.webp",
     desc: "Mango maduro; tropical, cremoso y de trago largo.",
     notas: [
-      ["Sabor", "Tropical y cremoso"],
-      ["Maridaje", "Mango, chile y sal de gusano"],
+      ["Sabor", "Tropical"],
+      ["Maridaje", "Mango, chile y sal"],
     ],
-    chips: ["Raicilla + mango", "Macerado artesanal"],
+    chips: ["Raicilla + mango", "Artesanal"],
   },
   "ponche-tamarindo": {
-    nombre: "Ponche de Tamarindo", formato: "Macerado artesanal", tag: "Frutal", precio: 250,
+    nombre: "Ponche de Tamarindo", formato: "Artesanal", tag: "Frutal", precio: 250,
     img: "images/productos/tamarindo-cutout.webp",
     desc: "Tamarindo agrio-dulce; cuerpo medio y carácter generoso.",
     notas: [
       ["Sabor", "Agrio-dulce, cuerpo medio"],
       ["Maridaje", "Comida picante y mariscos"],
     ],
-    chips: ["Raicilla + tamarindo", "Macerado artesanal"],
+    chips: ["Raicilla + tamarindo", "Artesanal"],
   },
   "ponche-maracuya": {
-    nombre: "Ponche de Maracuyá", formato: "Macerado artesanal", tag: "Frutal", precio: 250,
+    nombre: "Ponche de Maracuyá", formato: "Artesanal", tag: "Frutal", precio: 250,
     img: "images/productos/maracuya-cutout.webp",
     desc: "Maracuyá silvestre; cítrico, vibrante y con semillas crujientes.",
     notas: [
       ["Sabor", "Cítrico y vibrante"],
       ["Maridaje", "Mariscos y ensaladas"],
     ],
-    chips: ["Raicilla + maracuyá", "Macerado artesanal"],
+    chips: ["Raicilla + maracuyá", "Artesanal"],
   },
   "licor-cafe": {
-    nombre: "Licor de Café", formato: "Macerado artesanal", tag: "Especial", precio: 250,
+    nombre: "Licor de Café", formato: "Artesanal", tag: "Especial", precio: 250,
     img: "images/productos/cafe-cutout.webp",
     desc: "Café de altura de la región; tostado, cálido y con cuerpo. Perfecto para la sobremesa.",
     notas: [
       ["Sabor", "Tostado y cálido"],
       ["Maridaje", "Postres y sobremesa"],
     ],
-    chips: ["Café de la región", "Macerado artesanal"],
+    chips: ["Café de la región", "Artesanal"],
   },
   "ponche-arrayan": {
-    nombre: "Ponche de Arrayán", formato: "Macerado artesanal", tag: "Frutal", precio: 250,
+    nombre: "Ponche de Arrayán", formato: "Artesanal", tag: "Frutal", precio: 250,
     img: "images/productos/arrayan-cutout.webp",
-    desc: "Arrayán silvestre de la sierra; herbal, dulce y de carácter único.",
+    desc: "Arrayán cítrico, herbal, agridulce y de carácter único. ",
     notas: [
-      ["Sabor", "Herbal y dulce"],
+      ["Sabor", " cítrico, herbal, agridulce"],
       ["Maridaje", "Quesos y frutas secas"],
     ],
-    chips: ["Raicilla + arrayán", "Macerado artesanal"],
+    chips: ["Raicilla + arrayán", "Artesanal"],
   },
   "ponche-guayaba-agria": {
-    nombre: "Ponche de Guayaba Agria", formato: "Macerado artesanal", tag: "Frutal", precio: 250,
+    nombre: "Ponche de Guayaba Agria", formato: "Artesanal", tag: "Frutal", precio: 250,
     img: "images/productos/guayaba-agria-cutout.webp",
     desc: "Guayaba agria de la región; ácida, aromática y refrescante.",
     notas: [
       ["Sabor", "Ácida y aromática"],
       ["Maridaje", "Comida picante y cítricos"],
     ],
-    chips: ["Raicilla + guayaba agria", "Macerado artesanal"],
+    chips: ["Raicilla + guayaba agria", "Artesanal"],
   },
   "ponche-limon": {
-    nombre: "Ponche de Limón", formato: "Macerado artesanal", tag: "Frutal", precio: 250,
+    nombre: "Ponche de Limón", formato: "Artesanal", tag: "Frutal", precio: 250,
     img: "images/productos/limon-cutout.webp",
     desc: "Limón amarillo; cítrico, brillante y vibrante en nariz y boca.",
     notas: [
       ["Sabor", "Cítrico y brillante"],
       ["Maridaje", "Mariscos y ensaladas"],
     ],
-    chips: ["Raicilla + limón", "Macerado artesanal"],
+    chips: ["Raicilla + limón", "Artesanal"],
   },
   "ponche-membrillo": {
-    nombre: "Ponche de Membrillo", formato: "Macerado artesanal", tag: "Frutal", precio: 250,
+    nombre: "Ponche de Membrillo", formato: "Artesanal", tag: "Frutal", precio: 250,
     img: "images/productos/membrillo-cutout.webp",
     desc: "Membrillo maduro; dulce, floral y de cuerpo generoso.",
     notas: [
       ["Sabor", "Dulce y floral"],
       ["Maridaje", "Postres y quesos"],
     ],
-    chips: ["Raicilla + membrillo", "Macerado artesanal"],
+    chips: ["Raicilla + membrillo", "Artesanal"],
   },
 };
 
@@ -514,6 +523,8 @@ if (stepNav && stepsFlow) {
       /* Preview real: extrae un frame del video como poster */
       const grabFrame = () => {
         if (!video.videoWidth) return;
+        slot.style.aspectRatio = video.videoWidth / video.videoHeight;
+        slot.classList.toggle("is-landscape", video.videoWidth > video.videoHeight);
         try {
           const grab = () => {
             try {
