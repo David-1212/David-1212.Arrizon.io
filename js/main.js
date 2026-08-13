@@ -523,8 +523,6 @@ if (stepNav && stepsFlow) {
       /* Preview real: extrae un frame del video como poster */
       const grabFrame = () => {
         if (!video.videoWidth) return;
-        slot.style.aspectRatio = video.videoWidth / video.videoHeight;
-        slot.classList.toggle("is-landscape", video.videoWidth > video.videoHeight);
         try {
           const grab = () => {
             try {

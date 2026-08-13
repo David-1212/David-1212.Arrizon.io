@@ -265,6 +265,7 @@ html.no-js .preloader{display:none}
 .nav__burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav__burger.is-open span:nth-child(2){opacity:0}
 .nav__burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav__panel-foot{display:none}
 
 /* =========================================================
    HERO (se mantiene oscuro, respeta la imagen)
@@ -799,7 +800,6 @@ html.no-js .preloader{display:none}
   .nav__links.is-open{transform:translateX(0)}
   .nav__links.is-open::before{content:"";position:fixed;inset:0;z-index:-1;background:rgba(8,11,7,.6);backdrop-filter:blur(3px)}
   .nav__links a,.nav.is-scrolled .nav__links a{color:#f2e9d4}
-  .nav__links a:not(.nav__cta){color:#f2e9d4}
   .nav__links > a:not(.nav__cta){
     counter-increment:navi;position:relative;display:flex;align-items:baseline;gap:1rem;
     font-family:var(--serif);font-size:1.42rem;font-weight:500;letter-spacing:.02em;text-transform:none;
@@ -972,7 +972,7 @@ html.no-js .preloader{display:none}
 .step__video-slot-txt{font-size:.62rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase}
 .step__video-slot-ic,.step__video-slot-txt{position:relative;z-index:3;pointer-events:none}
 .step__video-slot video{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:inherit;
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;
   background:#000;z-index:2;cursor:pointer;
 }
 .step__video-slot.is-ready video{
@@ -986,7 +986,6 @@ html.no-js .preloader{display:none}
 }
 .step__video-slot.is-playing .step__video-slot-ic,
 .step__video-slot.is-playing .step__video-slot-txt{display:none}
-.step__video-slot.is-landscape{flex-basis:64%;align-self:center;max-height:100%}
 .step__body{position:relative;z-index:1}
 .step__badge{
   display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
@@ -1100,7 +1099,7 @@ a.contact__card:hover{transform:translateY(-4px);border-color:rgba(185,135,44,.4
 @media (max-width:560px){
   .step__media{flex-direction:column;aspect-ratio:auto;gap:.9rem}
   .step__media-img{flex:none;width:100%;aspect-ratio:16/9}
-  .step__video-slot,.step__video-slot.is-landscape{flex:none;width:85%;align-self:auto;max-height:none;margin-inline:auto;aspect-ratio:9/16;height:auto;border-radius:18px}
+  .step__video-slot{flex:none;width:85%;margin-inline:auto;aspect-ratio:9/16;height:auto;border-radius:18px}
   .step__video-slot-ic{width:40px;height:40px}
   .step::before{font-size:8rem}
   .tl-card::before{font-size:7rem}
