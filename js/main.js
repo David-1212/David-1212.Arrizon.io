@@ -188,7 +188,7 @@ if (tlNav && tlFlow) {
         if (active) centerNav(tlNav, b);
       });
     });
-  }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+  }, { rootMargin: "-40% 0px -50% 0px", threshold: 0 });
   tlCards.forEach((c) => tlSpy.observe(c));
 }
 
@@ -278,7 +278,7 @@ $$(".wa-order").forEach((btn) => {
 /* ============ MODAL DE PRODUCTO (foto + ficha) ============ */
 const PRODUCTOS = {
   "blanco-750": {
-    nombre: "Raicilla Blanco", formato: "750 ml · 45% Alc. Vol.", tag: "Clásica", precio: 350,
+    nombre: "Raicilla Blanco", formato: "750 ml · 40% Alc. Vol.", tag: "Clásica", precio: 350,
     img: "images/productos/raicilla_normal-cutout.webp",
     desc: "Nuestra raicilla insignia. 100% agave maximiliana de la sierra, destilada a mano en la Taberna La Vieja.",
     notas: [
@@ -308,7 +308,7 @@ const PRODUCTOS = {
 
 
   "blanco-250": {
-    nombre: "Raicilla Blanco", formato: "250 ml · 45% Alc. Vol.", tag: "Degustación", precio: 150,
+    nombre: "Raicilla Blanco", formato: "250 ml · 40% Alc. Vol.", tag: "Degustación", precio: 150,
     img: "images/productos/pachita-cutout.webp",
     desc: "El mismo carácter de la sierra en formato viaje y degustación. Ideal para regalar, probar o llevar contigo.",
     notas: [
@@ -316,7 +316,7 @@ const PRODUCTOS = {
       ["Nariz", "Agave cocido, cítricos, amaderado y hierbas de la sierra"],
       ["Frutal,  ahumado sutil, mineral, untuoso; retrogusto largo y agradable"],
     ],
-    chips: ["45% Alc. Vol.", "Formato 250 ml"],
+    chips: ["40% Alc. Vol.", "Formato 250 ml"],
   },
   "ponche-jamaica": {
     nombre: "Ponche de Jamaica", formato: "Artesanal", tag: "Frutal", precio: 250,
