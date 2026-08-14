@@ -284,9 +284,9 @@ const PRODUCTOS = {
     notas: [
       ["Vista", "Cristalino, brillante"],
       ["Nariz", "Agave cocido, cítricos, amaderado y hierbas de la sierra"],
-      ["Boca", "Frutal, ahumado sutil, minerall, untuoso; retrogusto largo y agradable"],
+      ["Boca", "Frutal, ahumado sutil, , untuoso; retrogusto largo y agradable"],
     ],
-    chips: ["40% Alc. Vol.", "Mascota, Jalisco", "Doble destilación"],
+    chips: ["40% Alc. Vol.", "Mascota, Jalisco", "Una destilación"],
   },
 
 
@@ -314,7 +314,7 @@ const PRODUCTOS = {
     notas: [
       ["Vista", "Cristalino, brillante"],
       ["Nariz", "Agave cocido, cítricos, amaderado y hierbas de la sierra"],
-      ["Frutal,  ahumado sutil, mineral, untuoso; retrogusto largo y agradable"],
+      ["Boca", "Frutal,  ahumado sutil, mineral, untuoso; retrogusto largo y agradable"],
     ],
     chips: ["40% Alc. Vol.", "Formato 250 ml"],
   },
@@ -331,7 +331,7 @@ const PRODUCTOS = {
   "ponche-mango": {
     nombre: "Ponche de Mango", formato: "Artesanal", tag: "Frutal", precio: 250,
     img: "images/productos/mango-cutout.webp",
-    desc: "Mango maduro; tropical, cremoso y de trago largo.",
+    desc: "Mango verde; tropical y de trago largo. ",
     notas: [
       ["Sabor", "Tropical"],
       ["Maridaje", "Mango, chile y sal"],
@@ -351,7 +351,7 @@ const PRODUCTOS = {
   "ponche-maracuya": {
     nombre: "Ponche de Maracuyá", formato: "Artesanal", tag: "Frutal", precio: 250,
     img: "images/productos/maracuya-cutout.webp",
-    desc: "Maracuyá silvestre; cítrico, vibrante y con semillas crujientes.",
+    desc: "Maracuyá silvestre; cítrico y vibrante",
     notas: [
       ["Sabor", "Cítrico y vibrante"],
       ["Maridaje", "Mariscos y ensaladas"],
