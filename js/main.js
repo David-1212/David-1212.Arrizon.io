@@ -551,6 +551,12 @@ if (stepNav && stepsFlow) {
       };
       video.addEventListener("click", () => { video.paused ? play() : close(); });
       video.addEventListener("ended", close);
+      /* Si el video no puede cargarse, oculta el slot y deja la foto del paso */
+      video.addEventListener("error", () => {
+        video.remove();
+        slot.classList.remove("is-ready", "is-playing");
+        slot.style.display = "none";
+      });
     };
 
     if ("IntersectionObserver" in window) {
@@ -561,7 +567,7 @@ if (stepNav && stepsFlow) {
             io.disconnect();
           }
         });
-      }, { rootMargin: "300px 0px" });
+      }, { rootMargin: "450px 0px" });
       io.observe(media);
     } else {
       build();
