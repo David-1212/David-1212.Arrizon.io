@@ -1,0 +1,27 @@
+{
+  "name": "Raicilla Hnos. Arrizón — Destilería artesanal en Mascota, Jalisco",
+  "short_name": "Raicilla Arrizón",
+  "description": "Raicilla artesanal, ponches y licores de la familia Arrizón en Mascota, Jalisco.",
+  "start_url": "https://arrizon.mx/",
+  "display": "standalone",
+  "background_color": "#fbf9f3",
+  "theme_color": "#fbf9f3",
+  "icons": [
+    {
+      "src": "images/logo-cuadrado.png",
+      "sizes": "1200x1200",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

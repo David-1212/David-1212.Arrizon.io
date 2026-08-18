@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://arrizon.mx/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -17,7 +18,7 @@
   </url>
   <url>
     <loc>https://arrizon.mx/historia.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -51,7 +52,7 @@
   </url>
   <url>
     <loc>https://arrizon.mx/productos.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -105,7 +106,7 @@
   </url>
   <url>
     <loc>https://arrizon.mx/proceso.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -120,10 +121,83 @@
       <image:loc>https://arrizon.mx/images/proceso/plantitas_nacimiento.jpeg</image:loc>
       <image:title>Plántulas de agave en el vivero</image:title>
     </image:image>
+
+    <video:video>
+      <video:thumbnail_loc>https://arrizon.mx/images/proceso/semilla.jpg</video:thumbnail_loc>
+      <video:title>Recoleccion de semilla de agave - Raicilla Hnos. Arrizon</video:title>
+      <video:description>Colectamos semillas de agave maximiliana para el vivero de la raicilla artesanal.</video:description>
+      <video:content_loc>https://arrizon.mx/images/proceso/semilla.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2025-01-01T00:00:00+06:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://arrizon.mx/images/proceso/vivero.jpg</video:thumbnail_loc>
+      <video:title>Vivero de agave - Raicilla Hnos. Arrizon</video:title>
+      <video:description>Las semillas de agave maximiliana germinan en el vivero de la Taberna La Vieja.</video:description>
+      <video:content_loc>https://arrizon.mx/images/proceso/vivero.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2025-01-01T00:00:00+06:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://arrizon.mx/images/proceso/transplante.jpg</video:thumbnail_loc>
+      <video:title>Transplante de agave al monte - Raicilla Hnos. Arrizon</video:title>
+      <video:description>Las plantulas de agave maximiliana se llevan al monte a madurar de 8 a 15 anos.</video:description>
+      <video:content_loc>https://arrizon.mx/images/proceso/transplante.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2025-01-01T00:00:00+06:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://arrizon.mx/images/proceso/jima.jpg</video:thumbnail_loc>
+      <video:title>Jima del agave - Raicilla Hnos. Arrizon</video:title>
+      <video:description>La pina de agave maximiliana se corta a mano y se transporta a la Taberna La Vieja.</video:description>
+      <video:content_loc>https://arrizon.mx/images/proceso/jima.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2025-01-01T00:00:00+06:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://arrizon.mx/images/proceso/coccion.jpg</video:thumbnail_loc>
+      <video:title>Coccion en horno de piedra - Raicilla Hnos. Arrizon</video:title>
+      <video:description>Las pinas de agave se cuecen en horno de piedra con lena para concentrar azucares.</video:description>
+      <video:content_loc>https://arrizon.mx/images/proceso/coccion.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2025-01-01T00:00:00+06:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://arrizon.mx/images/proceso/molienda.jpg</video:thumbnail_loc>
+      <video:title>Molienda del agave cocido - Raicilla Hnos. Arrizon</video:title>
+      <video:description>El agave cocido se muele para extraer el jugo que fermentara en raicilla.</video:description>
+      <video:content_loc>https://arrizon.mx/images/proceso/molienda.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2025-01-01T00:00:00+06:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://arrizon.mx/images/proceso/fermentacion.jpg</video:thumbnail_loc>
+      <video:title>Fermentacion del jugo de agave - Raicilla Hnos. Arrizon</video:title>
+      <video:description>El jugo de agave fermenta en tinas abiertas con levaduras silvestres de Mascota.</video:description>
+      <video:content_loc>https://arrizon.mx/images/proceso/fermentacion.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2025-01-01T00:00:00+06:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://arrizon.mx/images/proceso/destilacion.jpg</video:thumbnail_loc>
+      <video:title>Destilacion artesanal de raicilla - Hnos. Arrizon</video:title>
+      <video:description>Una sola destilacion en alambique de cobre para obtener el corazon de la raicilla.</video:description>
+      <video:content_loc>https://arrizon.mx/images/proceso/destilacion.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2025-01-01T00:00:00+06:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://arrizon.mx/contacto.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -133,7 +207,7 @@
   </url>
   <url>
     <loc>https://arrizon.mx/tour.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -147,13 +221,13 @@
   </url>
   <url>
     <loc>https://arrizon.mx/aviso-privacidad.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://arrizon.mx/aviso-legal.html</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
