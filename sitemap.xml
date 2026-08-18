@@ -220,6 +220,20 @@
     </image:image>
   </url>
   <url>
+    <loc>https://arrizon.mx/raicilla.html</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://arrizon.mx/images/proceso/horno.jpeg</image:loc>
+      <image:title>Horno de piedra — Proceso artesanal de la raicilla en Mascota, Jalisco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arrizon.mx/images/proceso/vivero.jpg</image:loc>
+      <image:title>Vivero de agave maximiliana — Raicilla Hnos. Arrizón</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://arrizon.mx/aviso-privacidad.html</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>yearly</changefreq>
