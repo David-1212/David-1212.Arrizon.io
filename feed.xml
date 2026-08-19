@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raicilla Hnos. Arrizón</title>
+    <link>https://arrizon.mx/</link>
+    <description>Raicilla artesanal 100% agave maximiliana de los Hermanos Arrizón desde 1932. Destilería familiar en Mascota, Jalisco.</description>
+    <language>es-mx</language>
+    <lastBuildDate>Wed, 18 Aug 2026 00:00:00 +0600</lastBuildDate>
+    <atom:link href="https://arrizon.mx/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://arrizon.mx/images/logo-cuadrado.png</url>
+      <title>Raicilla Hnos. Arrizón</title>
+      <link>https://arrizon.mx/</link>
+    </image>
+    <item>
+      <title>¿Qué es la Raicilla? Guía Completa</title>
+      <link>https://arrizon.mx/raicilla.html</link>
+      <guid>https://arrizon.mx/raicilla.html</guid>
+      <pubDate>Wed, 18 Aug 2026 00:00:00 +0600</pubDate>
+      <description>Historia, proceso artesanal, tipos de agave, regiones productoras y Denominación de Origen de la raicilla mexicana.</description>
+    </item>
+    <item>
+      <title>Nuestros Productos</title>
+      <link>https://arrizon.mx/productos.html</link>
+      <guid>https://arrizon.mx/productos.html</guid>
+      <pubDate>Wed, 18 Aug 2026 00:00:00 +0600</pubDate>
+      <description>Raicilla Blanco, Madurada en Vidrio y Ponches de Frutas de los Hermanos Arrizón.</description>
+    </item>
+    <item>
+      <title>Proceso Artesanal de la Raicilla</title>
+      <link>https://arrizon.mx/proceso.html</link>
+      <guid>https://arrizon.mx/proceso.html</guid>
+      <pubDate>Wed, 18 Aug 2026 00:00:00 +0600</pubDate>
+      <description>Ocho pasos artesanales: semilla, vivero, transplante, jima, cocción, molienda, fermentación y destilación.</description>
+    </item>
+    <item>
+      <title>Preguntas Frecuentes</title>
+      <link>https://arrizon.mx/faq.html</link>
+      <guid>https://arrizon.mx/faq.html</guid>
+      <pubDate>Wed, 18 Aug 2026 00:00:00 +0600</pubDate>
+      <description>Resolvemos tus dudas sobre la raicilla: qué es, cómo se hace, dónde comprarla y cómo pedirla.</description>
+    </item>
+    <item>
+      <title>Glosario de la Raicilla</title>
+      <link>https://arrizon.mx/glosario-raicilla.html</link>
+      <guid>https://arrizon.mx/glosario-raicilla.html</guid>
+      <pubDate>Wed, 18 Aug 2026 00:00:00 +0600</pubDate>
+      <description>Todos los términos del mundo de la raicilla y los destilados de agave explicados.</description>
+    </item>
+    <item>
+      <title>Tour a La Vieja</title>
+      <link>https://arrizon.mx/tour.html</link>
+      <guid>https://arrizon.mx/tour.html</guid>
+      <pubDate>Wed, 18 Aug 2026 00:00:00 +0600</pubDate>
+      <description>Visita la Taberna La Vieja en Mascota, Jalisco. Recorrido por el proceso de la raicilla, comida y hospedaje.</description>
+    </item>
+  </channel>
+</rss>
