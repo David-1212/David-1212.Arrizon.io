@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=101">
+  <link rel="stylesheet" href="css/styles.css?v=102">
 
   <script type="application/ld+json">
   {
@@ -133,27 +133,10 @@
       </div>
     </section>
 
-    <!-- ============ INTRO ============ -->
-    <section class="section raicilla-intro-sec">
-      <div class="container">
-        <p class="breadcrumb" aria-label="Migas de pan"><a href="index.html">Inicio</a> / <strong>Raicilla</strong></p>
-
-        <div class="raicilla-intro reveal">
-          <p>La <strong>raicilla</strong> es uno de los destilados de agave más antiguos de México. Mucho antes de que existiera el tequila, los habitantes de la sierra de Jalisco ya destilaban agave silvestre para obtener una bebida que llamaron <em>raicilla</em> — diminutivo de <em>raíz</em>, por la materia prima que la define. Hoy, la raicilla artesanal es un destilado con <strong>Denominación de Origen propia</strong> desde 2019, reconocido por su diversidad de especies de agave, sus métodos 100% artesanales y un terroir que ninguna otra bebida del mundo puede replicar.</p>
-          <p>A diferencia del tequila, que depende de una sola especie de agave, la raicilla de Jalisco permite <strong>múltiples variedades silvestres de agave</strong> — cada una aporta un perfil de sabor único que refleja el terroir de la sierra y la costa de Jalisco. Desde la raicilla de la sierra, con notas terrosas y minerales, hasta la raicilla de la costa, con sabores frescos y cítricos, cada botella cuenta una historia diferente.</p>
-          <p>En <a href="index.html">Raicilla Hnos. Arrizón</a>, llevamos más de 90 años preservando el método artesanal de la raicilla en nuestra <a href="tour.html">Taberna La Vieja</a> en Mascota, Jalisco. Cada botella es el resultado de un proceso que respeta los tiempos de la naturaleza y las técnicas transmitidas de generación en generación.</p>
-        </div>
-
-        <figure class="raicilla-hero-img reveal">
-          <img src="images/proceso/semilla.jpg" alt="Semilla de agave maximiliana en la sierra de Mascota, Jalisco" width="1200" height="630" loading="lazy">
-          <figcaption>La semilla de agave maximiliana es el punto de partida de toda raicilla artesanal.</figcaption>
-        </figure>
-      </div>
-    </section>
-
     <!-- ============ QUÉ ES ============ -->
     <section id="que-es" class="section" style="background:var(--bg-2)">
       <div class="container">
+        <p class="breadcrumb" aria-label="Migas de pan"><a href="index.html">Inicio</a> / <strong>Raicilla</strong></p>
         <div class="historia__head">
           <span class="kicker reveal">Definición</span>
           <h2 class="section-title reveal">¿Qué es la Raicilla?</h2>
@@ -338,61 +321,6 @@
       </div>
     </section>
 
-    <!-- ============ COMPARACIÓN ============ -->
-    <section id="comparacion" class="section" style="background:var(--bg-2)">
-      <div class="container">
-        <div class="historia__head">
-          <span class="kicker reveal">Diferencias clave</span>
-          <h2 class="section-title reveal">Raicilla vs. Tequila vs. Mezcal</h2>
-        </div>
-
-        <div class="raicilla-table-wrap reveal">
-          <table class="raicilla-table">
-            <thead>
-              <tr>
-                <th scope="col">Característica</th>
-                <th scope="col" class="raicilla-table__highlight">Raicilla</th>
-                <th scope="col">Tequila</th>
-                <th scope="col">Mezcal</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Especies</strong></td>
-                <td class="raicilla-table__highlight">Maximiliana, angustifolia, rhodacantha, inaequidens, valenciana</td>
-                <td>Solo Agave tequilana Weber Azul</td>
-                <td>Múltiples especies</td>
-              </tr>
-              <tr>
-                <td><strong>Región</strong></td>
-                <td class="raicilla-table__highlight">Jalisco y Nayarit (17 municipios)</td>
-                <td>Jalisco + 4 estados</td>
-                <td>Oaxaca + 8 estados</td>
-              </tr>
-              <tr>
-                <td><strong>Proceso</strong></td>
-                <td class="raicilla-table__highlight">Hornos de tierra, fermentación natural, alambiques de cobre</td>
-                <td>Industrial, autoclave o horno de piedra</td>
-                <td>Hornos de tierra, palenques</td>
-              </tr>
-              <tr>
-                <td><strong>DO</strong></td>
-                <td class="raicilla-table__highlight">Desde 2019</td>
-                <td>Desde 1974</td>
-                <td>Desde 1994</td>
-              </tr>
-              <tr>
-                <td><strong>Graduación</strong></td>
-                <td class="raicilla-table__highlight">35–55%</td>
-                <td>35–55%</td>
-                <td>36–55%</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ PROPIEDADES ============ -->
     <section id="propiedades" class="section">
       <div class="container">
@@ -553,7 +481,7 @@
     <img class="lightbox__img" id="lightboxImg" src="" alt="">
   </div>
 
-  <script src="js/main.js?v=101"></script>
+  <script src="js/main.js?v=102"></script>
   <script>
     (function(){
       document.querySelectorAll('.raicilla-hero-img img').forEach(function(img){img.style.cursor='zoom-in';img.addEventListener('click',function(){var lb=document.getElementById('lightbox');var li=document.getElementById('lightboxImg');if(lb&&li){li.src=img.src;li.alt=img.alt;lb.hidden=false;document.body.style.overflow='hidden';}});});
