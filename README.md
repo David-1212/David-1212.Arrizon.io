@@ -43,12 +43,18 @@ Todo está centralizado en **`js/main.js`**, arriba, en el objeto `CONTACT`:
 
 | Dato | Valor actual | Qué hacer |
 |---|---|---|
-| WhatsApp | `523881058508` (+52 388 105 8508) | Verificar número |
-| Teléfono | +52 388 105 5998 | Verificar |
+| WhatsApp | `523881025335` (+52 388 102 5335) | Verificar número |
+| Teléfono | +52 388 102 5335 (mismo que WhatsApp) | Verificar |
 | Correo | `hnos.arrizon.raicilla@gmail.com` | Ya es el oficial |
 | Instagram | `https://www.instagram.com/hnos_arrizon/` | Ya es el oficial |
 | TikTok | `https://www.tiktok.com/@hnos_arrizon` | Ya es el oficial |
 | Facebook | `https://www.facebook.com/Hnos.Arrizon` | Ya es el oficial |
+
+> Los enlaces de WhatsApp, teléfono, correo, mapa y redes ya no usan `href="#"`: cada
+> `<a>` tiene su URL real en el HTML (para que los buscadores y los visitantes sin JS
+> vean un destino válido), y `wireLinks()` en `js/main.js` los sobrescribe al cargar.
+> Si cambias un dato en `CONTACT`, actualiza también el `href` del HTML correspondiente.
+> `#footerTel` es un `tel:` real, no un enlace a WhatsApp.
 
 La **frase principal** está en el hero de `index.html` (sección `hero__title`).
 El texto actual *"Sabor y tradición es Raicilla Hnos. Arrizón"* es un **placeholder**
@@ -181,6 +187,17 @@ sitemap.xml      → mapa del sitio para Google (con imágenes)
 - Cronología animada, contadores, parallax, reveal on scroll, botón flotante de
   WhatsApp y menú móvil.
 - Barra de progreso de lectura y año dinámico en el footer.
+- Cero `href="#"` en todo el sitio: cada enlace tiene destino real en el HTML.
+- `.sr-only` (texto solo para lectores de pantalla) en los enlaces que sólo
+  contienen un ícono: logo del navbar y los tres botones sociales del footer.
+- `.ext` en los enlaces a fuentes externas, que añade la flecha `↗` (content CSS,
+  sin carácter en el texto, para no romper los lectores de pantalla).
+- Las Google Fonts se cargan sin bloquear el render
+  (`media="print" onload="this.media='all'"` + `<noscript>` de respaldo).
+  `css/styles.css` sigue siendo bloqueante a propósito: es CSS crítico.
+- `js/main.js` lleva `defer`; el mini `<script>` inline del `<head>` que cambia
+  `no-js` → `js` se mantiene, porque el CSS depende de esas clases para el
+  age gate y el preloader (moverlo provocaría destellos).
 
 ## SEO (lista de pendientes antes de publicar)
 
