@@ -14,6 +14,11 @@ Páginas:
 - `contacto.html` → Contacto: WhatsApp, tour, mapa y formulario.
 - `tour.html` → Página oculta del Tour a La Vieja (no aparece en el menú; se accede
   desde la tarjeta "Visita la Taberna" de `productos.html`).
+- `raicilla.html` → Guía sobre la raicilla (origen, denominación y tabla comparativa).
+  Se accede desde el enlace "raicilla" en la presentación de `index.html`.
+- `compartir/*.html` → 13 páginas ligeras (una por producto) para compartir por
+  WhatsApp. Son `noindex`, tienen Open Graph propio y enlazan al producto en
+  `productos.html`. Se abren desde los botones de compartir de esa página.
 - `aviso-privacidad.html` → Aviso de privacidad (LFPDPPP). Solo enlace en el footer.
 - `aviso-legal.html` → Aviso legal (restricción de edad, consumo responsable,
   propiedad intelectual). Solo enlace en el footer.
@@ -74,7 +79,7 @@ no existan las fotos, cada círculo muestra el sello "RA" como respaldo.
 Para usar las medallas reales, agrega en `images/`:
 
 ```
-images/medalla-1.jpg    images/medalla-2.jpg
+images/medalla-1.webp    images/medalla-2.webp
 ```
 
 y edita el `src` y los textos dentro de `medals__row` en `index.html`. Además de
@@ -98,7 +103,7 @@ Cada tarjeta (`article.hcard`) muestra una foto, el año y un texto:
 ```html
 <article class="hcard">
   <div class="hcard__media">
-    <img src="images/mi-foto.jpg" alt="Describe la foto" loading="lazy">
+    <img src="images/mi-foto.webp" alt="Describe la foto" width="800" height="600" loading="lazy" decoding="async">
     <span class="hcard__year">1932</span>
   </div>
   <div class="hcard__body">
@@ -111,9 +116,9 @@ Cada tarjeta (`article.hcard`) muestra una foto, el año y un texto:
 Coloca la foto en `images/` y cambia `src`, `alt` y `hcard__year`. No importa
 cuántas tarjetas haya: el bucle infinito funciona con cualquiera. Las fotos de
 ejemplo usan imágenes reales de la marca extraídas de su sitio oficial
-(`raicillahnosarrizon.wordpress.com`): `historia_agave.jpg`, `agave1.jpg`,
-`historia_taberna.jpg`, `maestros.jpg`, `botella 2.jpg`, `logo.png` y
-`botella_cristalino.jpg`.
+(`raicillahnosarrizon.wordpress.com`). Las que se sirven hoy están en WebP:
+`historia_agave.webp`, `agave1.webp`, `maestros.webp`, `logo.webp` y
+`botella_cristalino.webp`.
 
 Para cambiar la velocidad del autoplay, busca `AUTOPLAY_MS` (milisegundos) en el
 bloque "CARRUSEL HISTORIA" de `js/main.js`. Pon `0` para desactivarlo.
@@ -121,19 +126,31 @@ bloque "CARRUSEL HISTORIA" de `js/main.js`. Pon `0` para desactivarlo.
 ## Ponches de frutas
 
 La sección de **`productos.html`** muestra los ponches con foto disponible, con fondo
-transparente (`*-cutout.png` generados con rembg/u2net) en `images/productos/`:
+transparente (`*-cutout.webp`, generados con rembg/u2net y convertidos a WebP) en `images/productos/`:
 
 ```
-images/productos/jamaica-cutout.png     images/productos/mango-cutout.png
-images/productos/tamarindo-cutout.png   images/productos/maracuya-cutout.png
-images/productos/cafe-cutout.png        images/productos/raicilla_normal-cutout.png
-images/productos/madurado-cutout.png    images/productos/pachita-cutout.png
+images/productos/jamaica-cutout.webp     images/productos/mango-cutout.webp
+images/productos/tamarindo-cutout.webp   images/productos/maracuya-cutout.webp
+images/productos/cafe-cutout.webp        images/productos/raicilla_normal-cutout.webp
+images/productos/madurado-cutout.webp    images/productos/pachita-cutout.webp
 ```
 
 Cada tarjeta es clicable: la foto o "Detalles" abre un modal con foto y ficha completa
 (notas, chips y botón de WhatsApp). Para cambiar datos de un producto, edita la entrada
 correspondiente en `PRODUCTOS` dentro de `js/main.js` (las tarjetas `.shopcard` y sus
 fotos viven en `productos.html`).
+
+## Botella giratoria (360°)
+
+En la sección "Quiénes somos" de `index.html` hay una botella que gira al arrastrar
+con el mouse o el dedo; también responde a las flechas ← → cuando tiene el foco.
+La lógica está en `js/bottle360.js` y los cuadros que se muestran son
+`images/botella-360/display/frame-00.webp` … `frame-19.webp`.
+
+Sólo se precargan el frame visible y sus vecinos (no los 20 al inicio), para no
+penalizar la carga. Las carpetas `aligned/`, `ordered/`, `smooth/`, `turntable/`,
+`uniform/`, los `norm-frame-*` y `images/botella-3d/` son material de trabajo y
+**no** se referencian desde el sitio: borrarlos no cambia la web.
 
 ## Proceso con fotos y videos reales
 
@@ -147,14 +164,14 @@ desenfoque y oscurecido (`filter: blur(6px) brightness(.82)`) para que resalte e
 símbolo de reproducir; al pulsar ▶ el video se ve nítido. Clic en el slot ▶ reproduce
 y oculta el icono;
 otro clic sobre el video lo pausa y regresa al frame. Para cambiar una foto o video
-basta editar `src`/`data-video` del paso. Las fotos están en `images/proceso/*.jpg` y
+basta editar `src`/`data-video` del paso. Las fotos están en `images/proceso/*.webp` y
 los videos en `images/proceso/*.mp4` (semilla, vivero, transplante, jima, cocción,
 molienda, fermentación y destilación).
 
 > El frame se extrae del video solo en el mismo origen (HTTP/HTTPS); al abrir la página
 > directo como archivo (`file://`) el canvas queda "tainted" y se usa la foto como póster.
 
-> Peso: los 8 videos suman ~146 MB (`jima.mp4` pesa 71 MB). No afectan el rendimiento
+> Peso: los 8 videos suman ~22 MB (`jima.mp4` pesa 6.5 MB). No afectan el rendimiento
 > de carga porque se sirven con `preload="metadata"`, pero considera comprimirlos o
 > subirlos por separado a YouTube/Vimeo si el hosting te limita el tamaño.
 
@@ -167,14 +184,19 @@ productos.html   → destilados y ponches
 proceso.html     → 8 pasos de elaboración + sostenibilidad
 contacto.html    → WhatsApp, tour, mapa y formulario
 tour.html        → página oculta del tour (sin enlace en menú; desde la tarjeta en productos.html)
+raicilla.html    → guía sobre la raicilla y tabla comparativa
+compartir/       → 13 páginas ligeras para compartir cada producto por WhatsApp
 aviso-privacidad.html → aviso de privacidad (LFPDPPP; enlace en el footer)
 aviso-legal.html → aviso legal (18+, consumo responsable, propiedad intelectual; enlace en el footer)
 404.html          → página de error (noindex; GitHub Pages la sirve automáticamente)
 css/styles.css   → diseño y animaciones (compartido)
 js/main.js       → age gate, scroll, WhatsApp, formulario, carrusel
+js/bottle360.js  → botella giratoria del inicio (frames bajo demanda)
 images/          → fotos de la marca y fondos
 robots.txt       → instrucciones para buscadores
-sitemap.xml      → mapa del sitio para Google (con imágenes)
+sitemap.xml      → mapa del sitio para Google: 22 URLs (9 indexables + 13 de
+                   `compartir/`), con imágenes y videos. `404.html` queda fuera
+                   porque es noindex y una página de error no debe indexarse
 ```
 
 ## Extras ya incluidos
@@ -187,6 +209,7 @@ sitemap.xml      → mapa del sitio para Google (con imágenes)
 - Cronología animada, contadores, parallax, reveal on scroll, botón flotante de
   WhatsApp y menú móvil.
 - Barra de progreso de lectura y año dinámico en el footer.
+- Botella 360 en el inicio: arrastra o usa ← →; precarga sólo los frames vecinos.
 - Cero `href="#"` en todo el sitio: cada enlace tiene destino real en el HTML.
 - `.sr-only` (texto solo para lectores de pantalla) en los enlaces que sólo
   contienen un ícono: logo del navbar y los tres botones sociales del footer.
@@ -202,31 +225,49 @@ sitemap.xml      → mapa del sitio para Google (con imágenes)
 ## SEO (lista de pendientes antes de publicar)
 
 Cada página trae: `<title>`, `meta description`, `robots`, canonical, Open Graph,
-Twitter Card, `preload` del hero y datos estructurados (`WebSite`, `ItemList` en
-productos, `HowTo` en proceso, `Distillery`/`FAQPage` en contacto e inicio), además
-de `robots.txt` y `sitemap.xml`.
+Twitter Card, `preload` del hero y datos estructurados, además de `robots.txt` y
+`sitemap.xml`. El sitemap incluye las 22 páginas HTML (las 9 indexables y las 13
+de `compartir/`, que siguen con `noindex,follow` y por eso Google las mostrará
+como «excluidas» en Search Console; no afecta al ranking).
+
+**Identidad de marca (grafo de entidades):** las 9 páginas indexables publican un
+mismo nodo `Organization` (`https://arrizon.mx/#organization`, con `sameAs` a
+Facebook/Instagram/TikTok, `contactPoint` y `knowsAbout`) y un `Brand`
+(`#brand`). El resto de nodos lo referencian por `@id`: `LiquorStore` e
+`WebSite` en inicio, `AboutPage` en historia, `Article` en raicilla, `TouristTrip`
+en tour, `HowTo` en proceso, `ContactPage` en contacto, `WebPage` en los avisos e
+`ItemList` en productos. Las 13 páginas de `compartir/` publican un `Product`
+con precio, marca y vendedor; sus tarjetas sociales y las del resto del sitio
+usan la misma imagen OG 1200×630. El buscador acepta `?q=` para que el
+`SearchAction` del sitio funcione de verdad.
 
 Antes de subirlo a producción:
 
-1. **Dominio real**: `https://arrizon.mx` ya está configurado en las 8 páginas
-   (canonical, `og:url`, `og:image`, JSON-LD) y en `robots.txt`/`sitemap.xml`.
+1. **Dominio real**: `https://arrizon.mx` ya está configurado en todas las páginas
+   (incluidas las 13 de `compartir/`): canonical, `og:url`, `og:image`, JSON-LD,
+   además de `robots.txt`/`sitemap.xml`.
    Verifica en GitHub Pages (o el hosting elegido) que el dominio apunte aquí y que
    las URLs funcionen con HTTPS.
-2. **Imágenes optimizadas** (hecho): `images/fondo.jpeg` pasó de 2.6 MB a 403 KB
-   (LCP del hero), los fondos de `images/fondos/` y las fotos de `images/proceso/`
-   se re-comprimieron, y los cutouts de productos se sirven en **WebP** con fallback
-   PNG (`<picture>`). La carpeta pasó de 68.9 MB a 12.2 MB. Si cambias fotos,
-   procura mantener ese peso (Squoosh/TinyPNG).
+2. **Imágenes optimizadas** (hecho): todo el contenido visual se sirve en **WebP**
+   (`fondo.webp` del hero pasó de 346 KB a 265 KB; la foto grande de `raicilla.html`,
+   de 315 KB a 227 KB). Se borraron 54 originales JPG/PNG que ya tenían gemelo WebP
+   y no eran referenciados: 14.1 MB menos. `images/` quedó en 49.2 MB, de los cuales
+   22 MB son videos y 18.7 MB los frames de la botella 360 (sólo se descargan 3).
+   Se conservan como PNG/JPEG los favicons, el icono del manifest y los 14 OG de
+   `images/og/` (1200×630, JPEG para máxima compatibilidad con WhatsApp/Facebook/X).
+   Los fondos de `images/fondos/` siguen en JPEG porque su versión WebP pesaba más.
+   Si cambias fotos, conviértelas a WebP (Squoosh/TinyPNG) y actualiza la extensión
+   en HTML, CSS, JS, `sitemap.xml` y los datos estructurados.
  3. **(hecho)** Cronología de `historia.html` con fotos oficiales de la marca
-    (`images/historia/1.blas arrizon.jpg`, `2. generacion a generacion.jpg`,
-    `taberna.jpeg`, `DENOMICACION DE ORIGEN.jpg`, `maestras raicilleras.jpg` y
-    `productos/jamaica-cutout.png`). La tarjeta "Navidad" (Sandra como Embajadora)
+    (`images/historia/1.blas arrizon.webp`, `2. generacion a generacion.webp`,
+    `taberna.webp`, `DENOMICACION DE ORIGEN.webp`, `maestras raicilleras.webp` y
+    `productos/jamaica-cutout.webp`). La tarjeta "Navidad" (Sandra como Embajadora)
     pasó a contar la introducción de los **ponches** (impulsada por la
     participación de las mujeres en la marca, para paladares que prefieren
-    sabores más suaves). `maestras raicilleras.jpg` es la foto real de **Luisa
+    sabores más suaves). `maestras raicilleras.webp` es la foto real de **Luisa
     Fregoso y Carolina Quintero** (producción de los ponches) en la sección
-    "Maestros". La imagen `WhatsApp Image 2026-08-01 at 6.49.48 PM.jpeg` quedó
-    sin usar (descartada por el cliente).
+    "Maestros". La imagen `WhatsApp Image 2026-08-01 at 6.49.48 PM.webp` se usa
+    en `raicilla.html` (reducida a 850×850, de 315 KB a 227 KB).
 4. Registra el sitio en **Google Search Console** y **Bing Webmaster Tools**,
    y envía `sitemap.xml`.
 5. Conecta **Google Analytics 4** (o Plausible/GA4 alternativo) antes del lanzamiento.
